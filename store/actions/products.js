@@ -67,6 +67,8 @@ export const createProduct = (title, description, imageUrl, price) => {
   return async (dispatch, getState) => {
     // any async code you want!
     const token = getState().auth.token;
+    const userId = getState().auth.userId;
+    console.log(userId);
     const response = await fetch(
       `https://magicshop-9a0f2.firebaseio.com/products.json?auth=${token}`,
       {
